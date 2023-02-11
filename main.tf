@@ -1,14 +1,11 @@
-			provider "aws" {
-			  region = "us-east-1"
-	
-			}
-			
-			resource "aws_instance" "intro" {
-			  ami                    = "ami-0aa7d40eeae50c9a9"
-			  instance_type           = "t2.micro"
-			  vpc_security_group_ids = ["sg-093c1f7fe381c37b0"]
-			  tags = {
-			    Name    = "tf-key"
-			  
+provider "aws" {
+    region = "us-east-1"  
+}
+
+resource "aws_instance" "foo" {
+  ami           = "ami-05fa00d4c63e32376" # us-west-2
+  instance_type = "t2.micro"
+  tags = {
+      Name = "TF-Instance"
   }
-      }
+}
